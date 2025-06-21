@@ -1,0 +1,15 @@
+name: "Deploy LearnActions"
+
+on: # Este es un trigger
+  push: # cuando se haga un push (disparador)
+    branches: ["main"] # quiero que cuando se haga un push en la rama main
+                       # se ejecute el workflow
+
+jobs:
+  deploy-learnactions: # nombre del job
+    runs-on: ubuntu-latest # en que maquina se va a ejecutar (runner)
+    steps: # Pasos
+      run: echo "Hacemos pull del codigo"
+      run: echo "Correr migraciones"
+      run: echo "Generar binario"
+      run: echo "Publicar version"
